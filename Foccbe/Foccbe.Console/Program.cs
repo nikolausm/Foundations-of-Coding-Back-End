@@ -2,20 +2,26 @@ namespace Foccbe.Console;
 
 class Program
 {
-    // Static list to store all products in the inventory
-    private static List<Product> s_inventory = new();
+    /// <summary>
+    /// Static list to store all products in the inventory
+    /// </summary>
+    private static readonly List<Product> s_inventory = new();
 
+    /// <summary>
+    /// Entry point of the program. Displays a welcome message and starts the menu loop.
+    /// </summary>
     static void Main(string[] _)
     {
-        // Welcome message
+        
         System.Console.WriteLine("Welcome to the Inventory Management System!");
-
-        // Start the menu loop
+        
         ShowMenu();
     }
 
-    // Method to display the menu and handle user input
-    public static void ShowMenu()
+    /// <summary>
+    /// Displays the menu and handles user input for various inventory management actions.
+    /// </summary>
+    private static void ShowMenu()
     {
         while (true)
         {
@@ -62,8 +68,10 @@ class Program
         }
     }
 
-    // Method to add a new product
-    static void AddProduct()
+    /// <summary>
+    /// Adds a new product to the inventory.
+    /// </summary>
+    private static void AddProduct()
     {
         System.Console.WriteLine("\n[AddProduct] Adding new product...");
 
@@ -121,8 +129,10 @@ class Program
         System.Console.WriteLine($"Product '{name}' added successfully!");
     }
 
-    // Method to display the inventory
-    static void DisplayInventory()
+    /// <summary>
+    /// Displays all products in the inventory.
+    /// </summary>
+    private static void DisplayInventory()
     {
         System.Console.WriteLine("\n[DisplayInventory] Current Products in Inventory:");
 
@@ -140,8 +150,10 @@ class Program
         }
     }
 
-    // Method to update product stock
-    static void UpdateStock()
+    /// <summary>
+    /// Updates the stock of a product selected by the user.
+    /// </summary>
+    private static void UpdateStock()
     {
         System.Console.WriteLine("\n[UpdateStock] Updating stock...");
 
@@ -205,8 +217,10 @@ class Program
         System.Console.WriteLine($"Stock for product '{selectedProduct.Name}' updated successfully!");
     }
 
-    // Method to increase stock quantity
-    static void IncreaseStock()
+    /// <summary>
+    /// Increases the stock quantity of a selected product.
+    /// </summary>
+    private static void IncreaseStock()
     {
         System.Console.WriteLine("\n[IncreaseStock] Increasing stock...");
 
@@ -248,8 +262,10 @@ class Program
         System.Console.WriteLine($"Stock for product '{selectedProduct.Name}' increased successfully!");
     }
 
-    // Method to decrease stock quantity
-    static void DecreaseStock()
+    /// <summary>
+    /// Decreases the stock quantity of a selected product.
+    /// </summary>
+    private static void DecreaseStock()
     {
         System.Console.WriteLine("\n[DecreaseStock] Decreasing stock...");
 
@@ -298,8 +314,10 @@ class Program
         System.Console.WriteLine($"Stock for product '{selectedProduct.Name}' decreased successfully!");
     }
 
-    // Method to remove a product
-    static void RemoveProduct()
+    /// <summary>
+    /// Removes a product from the inventory by name.
+    /// </summary>
+    private static void RemoveProduct()
     {
         System.Console.WriteLine("\n[RemoveProduct] Removing a product...");
 
