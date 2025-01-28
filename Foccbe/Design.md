@@ -46,8 +46,68 @@
 ## Optional Flowchart (Describe or Create)
 
 1. **Menu System**:
-    - Displays menu options.
-    - Waits for user input.
-2. Based on user input:
-    - Call the appropriate method (`AddProduct`, `UpdateStock`, etc.).
-    - Repeat until the user exits.
+
+```plaintext
++----------------------+
+|      Show Menu       |
++----------------------+
+          ↓
++----------------------+
+|  Capture User Input  |
++----------------------+
+          ↓
++-----------------------------+
+|   Match Input in Switch     |
+| (Add, Update, Display, etc) |
++-----------------------------+
+          ↓
++----------------------------------+
+| Execute Corresponding Method     |
+| (AddProduct, UpdateStock, etc.)  |
++----------------------------------+
+          ↓
++----------------------+
+| Continue or Exit     |
+|    (Based on Input)  |
++----------------------+
+```
+
+2. **Execution Flow**:
+
+```plaintext
++------------------+
+|   Add Product    |
++------------------+
+          ↓
++-------------------------------+
+|  Capture Product Details      |
+|  (Name, Price, Initial Stock) |
++-------------------------------+
+          ↓
++--------------------------+
+| Add Product to Inventory |
++--------------------------+
+          ↓
++-------------------+
+| Return to Menu    |
++-------------------+
+
+-----------------------------------
+
++----------------------+
+|    Update Stock      |
++----------------------+
+           ↓
++-------------------------------+
+| Select Product by Name        |
++-------------------------------+
+           ↓
++-------------------------+
+| Capture Stock Change    |
+| (Increase/Decrease/Set) |
++-------------------------+
+           ↓
++-------------------+
+| Return to Menu    |
++-------------------+
+```

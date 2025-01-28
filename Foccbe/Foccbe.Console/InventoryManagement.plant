@@ -1,0 +1,50 @@
+@startuml
+class Program {
+    - s_inventory : List<Product>
+    + Main()
+    + ShowMenu()
+    - AddProduct()
+    - UpdateStock()
+    - IncreaseStock()
+    - DecreaseStock()
+    - DisplayInventory()
+    - RemoveProduct()
+}
+
+interface IProduct {
+    + Name : string
+    + Price : decimal
+    + Stock : IStock
+}
+
+class Product {
+    - Name : string
+    - Price : decimal
+    - Stock : IStock
+    + Product(name, price, stock)
+    + ToString() : string
+}
+
+interface IStock {
+    + Quantity : int
+    + Increase(amount)
+    + Decrease(amount)
+    + Set(quantity)
+}
+
+class Stock {
+    - Quantity : int
+    + Stock(quantity)
+    + Increase(amount)
+    + Decrease(amount)
+    + Set(quantity)
+}
+
+
+Program -- IProduct
+Program -- Product
+Product --|> IProduct
+Product -- IStock
+Stock --|> IStock
+
+@enduml
