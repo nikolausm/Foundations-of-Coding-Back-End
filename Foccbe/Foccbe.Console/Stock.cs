@@ -10,6 +10,7 @@ public sealed class Stock : IStock
     /// </summary>
     public int Quantity { get; private set; }
 
+    
     /// <summary>
     /// Initializes a new instance of the <see cref="Stock"/> class with an optional initial quantity.
     /// </summary>
